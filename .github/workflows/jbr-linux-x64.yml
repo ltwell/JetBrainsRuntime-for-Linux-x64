@@ -69,12 +69,10 @@ jobs:
 
     - name: Collect Artifact
       run: |
-        mkdir jbr-linux-x64
         cd JetBrainsRuntime/build/linux-x86_64-normal-server-release/images
         mv jdk jbr
         zip -r jbr-linux-x64.zip ./jbr/*
         mv jbr-linux-x64.zip ../../../../
-        mv ./jbr/* ../../../../jbr-linux-x64/
 
     - name: Assemble Artifact
       id: assemble_artifact
@@ -90,8 +88,8 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@master
       with:
-        name: ${{ steps.assemble_artifact.outputs.release_name }}
-        path: jbr-linux-x64
+        name: ${{ steps.assemble_artifact.outputs.release_tag }}
+        path: jbr-linux-x64.zip
 
     - name: Create Release
       id: create_release

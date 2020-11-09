@@ -54,16 +54,20 @@ jobs:
         patch -p1 < idea.patch
 
     - name: Compile OpenJFX
+      env:
+        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+        JDK_HOME: $JAVA_HOME
       run: |
         cd rt
-        export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 && export JDK_HOME=$JAVA_HOME
         chmod a+x gradlew
         ./gradlew -PCOMPILE_WEBKIT=true
 
     - name: Compile JetBrainsRuntime
+      env:
+        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+        JDK_HOME: $JAVA_HOME
       run: |
         cd JetBrainsRuntime
-        export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 && export JDK_HOME=$JAVA_HOME
         sh ./configure --disable-warnings-as-errors  --with-import-modules=../rt/build/modular-sdk
         make images
 

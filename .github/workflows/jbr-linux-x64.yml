@@ -56,7 +56,7 @@ jobs:
     - name: Compile OpenJFX
       env:
         JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
-        JDK_HOME: $JAVA_HOME
+        JDK_HOME: /usr/lib/jvm/java-11-openjdk-amd64
       run: |
         cd rt
         chmod a+x gradlew
@@ -65,7 +65,7 @@ jobs:
     - name: Compile JetBrainsRuntime
       env:
         JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
-        JDK_HOME: $JAVA_HOME
+        JDK_HOME: /usr/lib/jvm/java-11-openjdk-amd64
       run: |
         cd JetBrainsRuntime
         sh ./configure --disable-warnings-as-errors  --with-import-modules=../rt/build/modular-sdk

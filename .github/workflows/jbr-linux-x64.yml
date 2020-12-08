@@ -35,15 +35,6 @@ jobs:
         sudo -E apt-get autoremove -y --purge
         sudo -E apt-get clean -y
 
-    - name: Free Disk Space
-      run: |
-        sudo swapoff -a
-        sudo rm -f /swapfile
-        sudo apt clean
-        sudo rm -rf "/usr/local/share/boost"
-        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-        df -h
-
     - name: Prepare Source
       run: |
         git config --global core.autocrlf input

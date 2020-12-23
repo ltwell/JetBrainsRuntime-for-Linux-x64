@@ -7,7 +7,7 @@ on:
   watch:
     types: [started]
   schedule:
-    - cron: 0 4 23 * *
+    - cron: 0 0 1 * *
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
         sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /usr/lib/jvm/
         sudo -E apt-get update -y
-        sudo -E apt-get install -y ant asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake curl device-tree-compiler flex g++-multilib gawk gcc-multilib gettext git git-core gperf haveged ksh lib32gcc1 libasound2-dev libavcodec-dev libavformat-dev libc6-dev-i386 libcups2-dev libelf-dev libfontconfig1-dev libgl1-mesa-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk2.0-dev libgtk-3-dev libjpeg-dev libncurses5-dev libpng-dev libreadline-dev libssl-dev libtool libudev-dev libx11-dev libxext-dev libxml2-dev libxrandr-dev libxrender-dev libxslt1-dev libxt-dev libxtst-dev libxxf86vm-dev libz-dev lrzsz make mercurial msmtp nano openjdk-11-jdk p7zip p7zip-full patch pkg-config python python3 python3-pip python3-ply python-pip python-ply qemu-utils ruby scons subversion texinfo uglifyjs unzip upx vim wget x11proto-core-dev x11proto-xf86vidmode-dev xmlto zlib1g-dev
+        sudo -E apt-get install -y ant asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake curl device-tree-compiler flex g++-multilib gawk gcc-multilib gettext git git-core gperf haveged ksh lib32gcc1 libasound2-dev libavcodec-dev libavformat-dev libc6-dev-i386 libcups2-dev libelf-dev libfontconfig1-dev libgl1-mesa-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk2.0-dev libgtk-3-dev libjpeg-dev libncurses5-dev libpng-dev libreadline-dev libssl-dev libtool libudev-dev libx11-dev libxext-dev libxml2-dev libxrandr-dev libxrender-dev libxslt1-dev libxt-dev libxtst-dev libxxf86vm-dev libz-dev lrzsz make mercurial msmtp nano openjdk-11-jdk p7zip p7zip-full patch pkg-config python3 python3-pip python3-ply qemu-utils ruby scons subversion texinfo uglifyjs unzip upx vim wget x11proto-core-dev x11proto-xf86vidmode-dev xmlto zlib1g-dev
         sudo -E apt-get autoremove -y --purge
         sudo -E apt-get clean -y
 
